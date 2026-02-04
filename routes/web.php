@@ -14,8 +14,15 @@ use App\Http\Controllers\Auth\GoogleController;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('signin');
-});
+})->name('login');
+Route::get('/logout', [GoogleController::class, 'logout'])->name('logout');
 Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
+
+Route::middleware('auth')->group(function () {
+    Route::get('/', function () {
+        return view('dashboard');
+    });
+});
