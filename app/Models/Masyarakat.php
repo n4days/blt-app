@@ -22,7 +22,9 @@ class Masyarakat extends Model
         'penghasilan',
         'jumlah_tanggungan',
         'status_rumah',
-        'status_ekonomi'
+        'status_ekonomi',
+        'tanggal_penyaluran',
+        'nominal_bantuan'
     ];
 
     public function user()

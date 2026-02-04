@@ -26,6 +26,7 @@
                         <th>Nama</th>
                         <th>Alamat</th>
                         <th>Status</th>
+                        <th>Nominal Bantuan</th>
                         <th width="140">Aksi</th>
                     </tr>
                 </thead>
@@ -41,6 +42,7 @@
                                 {{ ucfirst($item->status_penerima) }}
                             </span>
                         </td>
+                        <td>{{ number_format($item->nominal_bantuan,0,',','.') }}</td>
                         <td>
                             <button class="btn btn-sm btn-warning" data-bs-toggle="modal" data-bs-target="#modalEdit{{ $item->id }}">
                                 Edit
