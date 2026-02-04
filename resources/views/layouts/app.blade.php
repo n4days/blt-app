@@ -29,6 +29,9 @@
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('mastermasyarakat') ? 'active' : 'link-body-emphasis' }}" href="/master-masyarakat">Data Masyarakat</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-danger" href="/logout">Logout</a>
+                    </li>
                 </ul>
             </div>
         </div>

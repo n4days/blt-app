@@ -11,6 +11,20 @@ Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
 // Route::middleware('auth')->group(function () {
+
+//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+
+//     Route::get('/master-masyarakat', [MasyarakatController::class, 'index'])
+//         ->name('mastermasyarakat');
+
+//     Route::post('/master-masyarakat', [MasyarakatController::class, 'store'])
+//         ->name('mastermasyarakat.store');
+
+//     Route::put('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'update'])
+//         ->name('mastermasyarakat.update');
+
+//     Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
+//         ->name('mastermasyarakat.destroy');
 // });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
