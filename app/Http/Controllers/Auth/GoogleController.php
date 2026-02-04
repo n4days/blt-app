@@ -16,6 +16,13 @@ class GoogleController extends Controller
         return view('signin');
     }
 
+    public function hakakses()
+    {
+        $user = Auth::user();
+        return view('hak-akses', compact('user'));
+    }
+
+
     public function redirect()
     {
         return Socialite::driver('google')->redirect();
@@ -49,5 +56,18 @@ class GoogleController extends Controller
         $request->session()->regenerateToken();
 
         return redirect()->route('login');
+    }
+
+    public function updateHakAkses(Request $request, User $user)
+    {
+        $request->validate([
+            'hak_akses' => 'required|in:petugas,masyarakat'
+        ]);
+
+        $user->update([
+            'hak_akses' => $request->hak_akses
+        ]);
+
+        return redirect()->route('/');
     }
 }

@@ -9,6 +9,7 @@ Route::get('/login', [GoogleController::class, 'index'])->name('login');
 Route::get('/logout', [GoogleController::class, 'logout'])->name('logout');
 Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
+Route::get('/hak-akses', [GoogleController::class, 'hakakses']);
 
 // Route::middleware('auth')->group(function () {
 
@@ -25,6 +26,9 @@ Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
 //     Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
 //         ->name('mastermasyarakat.destroy');
+
+//     Route::put('/users/{user}/hak-akses', [GoogleController::class, 'updateHakAkses'])
+//         ->name('users.updateHakAkses');
 // });
 
 Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
@@ -40,3 +44,6 @@ Route::put('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'upd
 
 Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
     ->name('mastermasyarakat.destroy');
+
+Route::put('/users/{user}/hak-akses', [GoogleController::class, 'updateHakAkses'])
+    ->name('users.updateHakAkses');
