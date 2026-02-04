@@ -9,41 +9,25 @@ Route::get('/login', [GoogleController::class, 'index'])->name('login');
 Route::get('/logout', [GoogleController::class, 'logout'])->name('logout');
 Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
-Route::get('/hak-akses', [GoogleController::class, 'hakakses']);
 
-// Route::middleware('auth')->group(function () {
+Route::middleware('auth')->group(function () {
 
-//     Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
 
-//     Route::get('/master-masyarakat', [MasyarakatController::class, 'index'])
-//         ->name('mastermasyarakat');
+    Route::get('/master-masyarakat', [MasyarakatController::class, 'index'])
+        ->name('mastermasyarakat');
 
-//     Route::post('/master-masyarakat', [MasyarakatController::class, 'store'])
-//         ->name('mastermasyarakat.store');
+    Route::post('/master-masyarakat', [MasyarakatController::class, 'store'])
+        ->name('mastermasyarakat.store');
 
-//     Route::put('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'update'])
-//         ->name('mastermasyarakat.update');
+    Route::put('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'update'])
+        ->name('mastermasyarakat.update');
 
-//     Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
-//         ->name('mastermasyarakat.destroy');
+    Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
+        ->name('mastermasyarakat.destroy');
 
-//     Route::put('/users/{user}/hak-akses', [GoogleController::class, 'updateHakAkses'])
-//         ->name('users.updateHakAkses');
-// });
+    Route::put('/users/{user}/hak-akses', [GoogleController::class, 'updateHakAkses'])
+        ->name('users.updateHakAkses');
 
-Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
-
-Route::get('/master-masyarakat', [MasyarakatController::class, 'index'])
-    ->name('mastermasyarakat');
-
-Route::post('/master-masyarakat', [MasyarakatController::class, 'store'])
-    ->name('mastermasyarakat.store');
-
-Route::put('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'update'])
-    ->name('mastermasyarakat.update');
-
-Route::delete('/master-masyarakat/{masyarakat}', [MasyarakatController::class, 'destroy'])
-    ->name('mastermasyarakat.destroy');
-
-Route::put('/users/{user}/hak-akses', [GoogleController::class, 'updateHakAkses'])
-    ->name('users.updateHakAkses');
+    Route::get('/hak-akses', [GoogleController::class, 'hakakses']);
+});
