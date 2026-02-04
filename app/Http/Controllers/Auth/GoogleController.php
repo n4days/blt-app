@@ -11,6 +11,11 @@ use Illuminate\Http\Request;
 
 class GoogleController extends Controller
 {
+    public function index()
+    {
+        return view('signin');
+    }
+
     public function redirect()
     {
         return Socialite::driver('google')->redirect();

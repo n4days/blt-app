@@ -2,27 +2,17 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\GoogleController;
+use App\Http\Controllers\DashboardController;
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider and all of them will
-| be assigned to the "web" middleware group. Make something great!
-|
-*/
-
-Route::get('/login', function () {
-    return view('signin');
-})->name('login');
+Route::get('/login', [GoogleController::class, 'index'])->name('login');
 Route::get('/logout', [GoogleController::class, 'logout'])->name('logout');
 Route::get('/auth/google', [GoogleController::class, 'redirect']);
 Route::get('/auth/google/callback', [GoogleController::class, 'callback']);
 
-Route::middleware('auth')->group(function () {
-    Route::get('/', function () {
-        return view('dashboard');
-    });
-});
+// Route::middleware('auth')->group(function () {
+// });
+
+Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
+Route::get('/master-masyarakat', function () {
+    return view('mastermasyarakat');
+})->name('mastermasyarakat');
