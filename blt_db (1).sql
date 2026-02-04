@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Feb 04, 2026 at 07:26 AM
+-- Generation Time: Feb 04, 2026 at 08:02 AM
 -- Server version: 10.4.28-MariaDB
 -- PHP Version: 8.2.4
 
@@ -65,6 +65,13 @@ CREATE TABLE `masyarakats` (
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+
+--
+-- Dumping data for table `masyarakats`
+--
+
+INSERT INTO `masyarakats` (`id`, `user_id`, `nik`, `nama_lengkap`, `alamat`, `desa`, `kecamatan`, `kabupaten`, `provinsi`, `pekerjaan`, `penghasilan`, `jumlah_tanggungan`, `status_rumah`, `status_ekonomi`, `status_penerima`, `status_penyaluran`, `tanggal_penyaluran`, `nominal_bantuan`, `created_at`, `updated_at`) VALUES
+(8, 1, '1271143011000001', 'M Irsyad Ramadhan', 'Jl. rela', 'Sidorejo', 'Medan Tembung', 'Kota Medan', 'Sumatera Utara', 'Jualan', 1000000.00, 4, 'sewa', 'miskin', 'tidak_layak', 'belum', NULL, 1500000.00, '2026-02-03 23:35:58', '2026-02-03 23:35:58');
 
 -- --------------------------------------------------------
 
@@ -209,7 +216,7 @@ ALTER TABLE `failed_jobs`
 -- AUTO_INCREMENT for table `masyarakats`
 --
 ALTER TABLE `masyarakats`
-  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id` bigint(20) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `migrations`
