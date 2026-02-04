@@ -7,9 +7,11 @@
 
     <div class="d-flex justify-content-between mb-3">
         <h4>Master Data Masyarakat</h4>
+        @if(!auth()->user()->masyarakat)
         <button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalCreate">
             + Tambah Data
         </button>
+        @endif
     </div>
 
     @if(session('success'))
